@@ -21,5 +21,35 @@
     </section>
     <section>
         <h2>Noticias</h2>
+        <div id="newsContentiner">
+            <div *ngIf='newsCollection && newsCollection.length' class="scroller" style="height: 350px; overflow: hidden; width: auto;">
+                <div class="row news" *ngFor='let item of newsCollection'>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 hidden-sm hidden-xs">
+                        <img [src]="item.photoUrl" class="img-rounded img-news" width="68" height="80">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="margin-left:10px;">
+                        <div class="newsContent">
+                            <div class="row no-side-padding no-side-margin">
+                                <h4>
+                                    <div class="pull-left">
+                                        <a target="_blank" [href]="item.newsUrlTitle"> {{item.newsTitle}} </a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="newsData">{{item.newsDate}}</div>
+                                    </div>
+                                </h4>
+                            </div>
+                            <div class="row no-side-padding no-side-margin">
+                                <p style="text-align: justify">{{item.newsContent}} - <span>Fonte: <a [href]="item.font">{{item.font}}</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf='newsCollection.length == 0'>
+                    Não existe conteúdo a mostrar neste momento.
+                </div>
+                <!-- {{else}}  {{/each}} -->
+            </div>
+        </div>
     </section>
 </div>

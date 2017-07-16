@@ -11,6 +11,11 @@ import { ActivitiesComponent } from './activities/activities.component';
 import { PublicationsComponents } from './publications/publications.component';
 import { ContactsComponent } from './contacts/contacts.component';
 
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+
+// const config: SocketIoConfig = { url: 'http://nodejsjuanprojects-tweetnode.rhcloud.com/', options: { reconnect: false } };
+const config: SocketIoConfig = { url: 'http://127.0.0.1:8080/', options: { reconnect: false } };
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +38,7 @@ import { ContactsComponent } from './contacts/contacts.component';
       { path: '', redirectTo: 'bem-vindo', pathMatch: 'full' },
       { path: '**', redirectTo: 'bem-vindo', pathMatch: 'full' }
     ]),
+    SocketIoModule.forRoot(config),
   ],
   providers: [],
   bootstrap: [AppComponent]

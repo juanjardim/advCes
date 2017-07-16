@@ -25,6 +25,7 @@
         "styles/app.min.css"        
       ],
       "scripts": [
+        "scripts/gmaps.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
