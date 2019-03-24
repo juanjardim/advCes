@@ -4,7 +4,8 @@
 html,
 body {
   height: 100%;
-  padding: 0; }
+  padding: 0;
+  font-size: 16px; }
 
 html {
   box-sizing: border-box; }
@@ -19,6 +20,9 @@ body {
 
 h2 {
   font-size: 25px; }
+
+p {
+  font-size: 1rem; }
 
 a,
 a:hover {
@@ -73,14 +77,16 @@ cs-footer {
       .navbar.navbar-default .nav li a.active {
         color: #421029; }
 
-.welcome-image {
-  float: right; }
+.web-image {
+  margin: 0 auto; }
+  @media (max-width: 768px) {
+    .web-image {
+      object-fit: cover;
+      max-height: 300px;
+      margin-top: 20px; } }
 
-.welcome-message {
-  float: left;
-  max-width: 85%; }
-  .welcome-message p:first-of-type {
-    margin-top: 15px; }
+.welcome-message p:first-of-type {
+  margin-top: 15px; }
 
 #home section > p,
 #home section > ol,
@@ -176,17 +182,8 @@ footer .contacts {
         padding-bottom: 15px; }
       #cesar-pires-navigation ul > li:last-of-type > a {
         border-bottom: none; }
-  .welcome-message {
-    float: none;
-    max-width: 100%;
-    display: block; }
-    .welcome-message p:first-of-type {
-      margin-top: 10px; }
-  .welcome-image {
-    float: none; }
-    .welcome-image img {
-      display: block;
-      margin: auto; }
+  .welcome-message p:first-of-type {
+    margin-top: 10px; }
   .navbar {
     padding-left: 0px;
     padding-right: 0px;
