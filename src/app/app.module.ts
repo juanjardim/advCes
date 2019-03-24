@@ -13,8 +13,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 
-// const config: SocketIoConfig = { url: 'http://nodejsjuanprojects-tweetnode.rhcloud.com/', options: { reconnect: false } };
-const config: SocketIoConfig = { url: 'http://127.0.0.1:8080/', options: { reconnect: false } };
+const config: SocketIoConfig = { url: 'http://nodejsjuanprojects-tweetnode.rhcloud.com/' };
 
 @NgModule({
   declarations: [

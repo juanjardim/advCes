@@ -4,11 +4,12 @@ $main-color: #741b47;
 $main-color-dark: #421029;
 $navigation-font-size: 1.27143em;
 $navigation-footer-font-size: 1.37143em;
-
 * {
-	margin: 0;
+    margin: 0;
 }
-html, body {
+
+html,
+body {
     height: 100%;
     padding: 0;
 }
@@ -42,19 +43,20 @@ a:hover {
 }
 
 .page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-	margin-bottom: -257px; 
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -257px;
 }
 
 .page-wrap:after {
-  content: "";
-  display: block;
+    content: "";
+    display: block;
 }
 
-footer, .page-wrap:after {
-  /* .push must be the same height as footer */
-	height: 257px; 
+footer,
+.page-wrap:after {
+    /* .push must be the same height as footer */
+    height: 257px;
 }
 
 cs-navigation,
@@ -135,6 +137,34 @@ cs-footer {
     }
 }
 
+#newsContentiner {
+    padding-top: 20px;
+    .news {
+        margin-bottom: 25px;
+        .img-container {
+            height: 80px;
+            width: 68px;
+            display: inline-block;
+            margin-right: 20px;
+            .img-news {
+                height: 80px;
+                width: 68px;
+                vertical-align: baseline;
+            }
+        }
+        .newsContent {
+            display: inline-block;
+            .newsDate {
+                font-size: 14px;
+                color: #ADA8B6;
+            }
+        }
+        &:last-of-type {
+            margin-bottom: 0px;
+        }
+    }
+}
+
 footer {
     .navigation {
         background-color: $main-color;
@@ -192,6 +222,18 @@ footer {
 
 
 /* eXtra Small */
+
+@media screen and (max-width: 365px) {
+    .nav-mobile {
+        display: none;
+    }
+    #newsContentiner {
+        .news {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+}
 
 @media screen and (max-width: 767px) {
     #cesar-pires-navigation {

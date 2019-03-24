@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { Socket } from 'ng-socket-io';
+
 import { INews } from './news';
+import { NewsService } from './news.service';
 
 @Component({
     templateUrl: './home.component.html'
@@ -10,26 +11,12 @@ import { INews } from './news';
 export class HomeComponent implements OnInit {
     newsCollection: INews[];
 
-    constructor(private socket: Socket) { }
+    /* Methods */
+    constructor(private _newsService: NewsService) { }
+
     ngOnInit() {
-        this.socket.emit('set room', "oaNews");
-        this.socket.on('news', function (data: INews[]) {
-            this.newsCollection = data;
-            // NewsCollection.set("content", data);
-            // handlerScroll();
-        });
-
-        this.socket.on('disconnect', function () {
-            console.log("Server Disconnect");
-            this.disconnect();
-        });
-
-        this.socket.on('connection', function (data: any) {
-            console.log("message: " + data);
-        })
-
-        this.socket.on('error', function (reason: any) {
-            console.log('Unable to connect Socket.IO', reason);
-        });
+        this._newsService.getNews().subscribe(
+            newsCollection => this.newsCollection = newsCollection
+        );
     }
 }

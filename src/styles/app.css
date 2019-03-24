@@ -1,7 +1,8 @@
 * {
   margin: 0; }
 
-html, body {
+html,
+body {
   height: 100%;
   padding: 0; }
 
@@ -36,7 +37,8 @@ a:hover {
   content: "";
   display: block; }
 
-footer, .page-wrap:after {
+footer,
+.page-wrap:after {
   /* .push must be the same height as footer */
   height: 257px; }
 
@@ -92,6 +94,27 @@ cs-footer {
   font-size: 16px;
   margin-left: 15px; }
 
+#newsContentiner {
+  padding-top: 20px; }
+  #newsContentiner .news {
+    margin-bottom: 25px; }
+    #newsContentiner .news .img-container {
+      height: 80px;
+      width: 68px;
+      display: inline-block;
+      margin-right: 20px; }
+      #newsContentiner .news .img-container .img-news {
+        height: 80px;
+        width: 68px;
+        vertical-align: baseline; }
+    #newsContentiner .news .newsContent {
+      display: inline-block; }
+      #newsContentiner .news .newsContent .newsDate {
+        font-size: 14px;
+        color: #ADA8B6; }
+    #newsContentiner .news:last-of-type {
+      margin-bottom: 0px; }
+
 footer .navigation {
   background-color: #741b47;
   font-size: 1.37143em; }
@@ -134,6 +157,13 @@ footer .contacts {
     color: #c2c2c2; }
 
 /* eXtra Small */
+@media screen and (max-width: 365px) {
+  .nav-mobile {
+    display: none; }
+  #newsContentiner .news {
+    padding-left: 5px;
+    padding-right: 5px; } }
+
 @media screen and (max-width: 767px) {
   #cesar-pires-navigation {
     background-color: #F5F5F5; }
