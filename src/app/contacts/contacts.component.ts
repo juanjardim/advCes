@@ -18,9 +18,9 @@ export class ContactsComponent implements OnInit {
         map.addMarker({
             lat: 41.381856,
             lng: -8.76329,
-            title: 'Cesár Pires -Advogado',
+            title: 'César Pires -Advogado',
             infoWindow: {
-                content: '<p>Cesár Pires - Advogado</p> <p>Rua Frei Sebastião de São Luís Nº 1A, 1º Andar Sala E 4490-639 Póvoa de Varzim - Portugal</p>'
+                content: '<p>César Pires - Advogado</p> <p>Rua Frei Sebastião de São Luís Nº 1A, 1º Andar Sala E 4490-639 Póvoa de Varzim - Portugal</p>'
             }
         });
     }
