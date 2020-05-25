@@ -1,0 +1,20 @@
+
+@import "../variables";
+@import '~bootstrap/scss/functions';
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+main {
+  &.container {
+    padding-top: 90px;
+    padding-bottom: 20px;
+    min-height: calc(100vh - 80px);
+
+    @include media-breakpoint-up(md) {
+      padding-top: 150px;
+    }
+    @include media-breakpoint-up(lg) {
+      padding-top: 125px;
+    }
+  }
+}

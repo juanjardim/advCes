@@ -1,5 +1,15 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
+
 @Component({
-    templateUrl: './activities.component.html'
+  selector: 'app-activities',
+  templateUrl: './activities.component.html',
+  styleUrls: ['./activities.component.scss']
 })
-export class ActivitiesComponent { }
+export class ActivitiesComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

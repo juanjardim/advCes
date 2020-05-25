@@ -1,43 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { GoogleMapsModule } from "@angular/google-maps";
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { CurriculumComponent } from './curriculum/curriculum.component';
 import { ActivitiesComponent } from './activities/activities.component';
-import { PublicationsComponents } from './publications/publications.component';
 import { ContactsComponent } from './contacts/contacts.component';
-
-import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-
-const config: SocketIoConfig = { url: 'http://nodejsjuanprojects-tweetnode.rhcloud.com/' };
+import { CurriculumComponent } from './curriculum/curriculum.component';
+import { PublicationsComponent } from './publications/publications.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
     FooterComponent,
-    CurriculumComponent,
+    HeaderComponent,
+    HomeComponent,
     ActivitiesComponent,
-    PublicationsComponents,
     ContactsComponent,
-    HomeComponent
+    CurriculumComponent,
+    PublicationsComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      { path: 'bem-vindo', component: HomeComponent },
-      { path: 'curriculo', component: CurriculumComponent },
-      { path: 'areas-de-actividade', component: ActivitiesComponent },
-      { path: 'publicações', component: PublicationsComponents },
-      { path: 'contactos', component: ContactsComponent },
-      { path: '', redirectTo: 'bem-vindo', pathMatch: 'full' },
-      { path: '**', redirectTo: 'bem-vindo', pathMatch: 'full' }
-    ]),
-    SocketIoModule.forRoot(config),
+    AppRoutingModule,
+    GoogleMapsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,33 @@
+<header>
+  <nav class="navbar navbar-expand-md fixed-top navbar-light">
+    <div class="container pl-0 pr-0 pb-2 d-sm-flex flex-md-column flex-lg-row">
+      <a routerLink="bem-vindo" class="nav-brand">
+        <img src="images/icon.svg" class="d-inline-block" alt="César Pires - Advogado">
+        <h1 class="d-inline-block ml-2 align-middle mb-0">César Pires - Advogado <span class="d-block text-center">Responsabilidate Limitada</span></h1>
+      </a>
+      <button class="navbar-toggler"  [ngClass]="{'collapsed': isCollapsed}" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation" (click)="changeCollapse()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end pt-md-3 pt-lg-0 d-md-inline {{animationClass}}" id="navbarCollapse" [ngClass]="{'show': !isCollapsed}">
+        <ul class="nav" [ngClass]="{'navbar-nav mr-auto pt-2': !isCollapsed}">
+          <li class="nav-item pr-1" routerLinkActive="active" (click)="close()">
+            <a class="nav-link" routerLink="bem-vindo">Bem-vindo <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item pr-1" routerLinkActive="active" (click)="close()">
+            <a class="nav-link" routerLink="curriculo">Curriculo</a>
+          </li>
+          <li class="nav-item pr-1" routerLinkActive="active" (click)="close()">
+            <a class="nav-link" routerLink="areas-de-actividade">Áreas de Actividade</a>
+          </li>
+          <li class="nav-item pr-1" routerLinkActive="active" (click)="close()">
+            <a class="nav-link" routerLink="publicações">Publicações</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active" (click)="close()">
+            <a class="nav-link" routerLink="contactos">Contactos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

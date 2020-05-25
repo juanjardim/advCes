@@ -1,0 +1,97 @@
+@import "../../variables";
+@import '~bootstrap/scss/functions';
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.navbar {
+  background-color: $white;
+
+  .navbar-collapse{
+    transition: .2s linear;
+  }
+
+  .container {
+    border-bottom: 1px solid $border-color;
+  }
+
+  .nav-brand {
+    color: $main-color;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+
+
+      span {
+        font-size: 1rem;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+
+
+
+      }
+    }
+
+    @include media-breakpoint-only(lg) {
+      img {
+        width: 50px;
+        height: 50px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        span {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .img-fluid {
+    max-width: 400px;
+  }
+
+  li {
+    a {
+      color: $nav;
+      padding-top: 0;
+      font-size: $font-size + 2px;
+      transition: .2s linear;
+
+      @include media-breakpoint-only(lg) {
+        font-size: 1rem;
+      }
+
+      @include media-breakpoint-only(xs) {
+        padding-bottom: 3px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &:hover {
+      a {
+        color: $nav-hover;
+        border-bottom: 2px solid $nav-active;
+      }
+    }
+
+    &.active {
+      a {
+        color: $nav-active;
+        border-bottom: 2px solid $nav-active;
+      }
+    }
+  }
+}

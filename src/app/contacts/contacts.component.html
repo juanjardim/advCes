@@ -1,11 +1,15 @@
-<div id="contacts">
-    <address style="margin-top: 30px">
-        <p>César Pires - Advogado</p>
-        <p>Rua Frei Sebastião de São Luís, Nº 1A, 1º Andar, Sala E, 4490-639 Póvoa de Varzim - Portugal</p>
-        <p>Tel.: (+351)919003008 / E-mail: <a href="mailto:cesarpires-10865p@adv.oa.pt">cesarpires-10865p@adv.oa.pt</a></p>
-    </address>
-    <div class="popin">
-        <div id="varzinLocation" class="gmaps" style="height: 350px;">
-        </div>
-    </div>
-</div>
+  <address>
+      <p>César Pires - Advogado</p>
+      <p>Rua Frei Sebastião de São Luís, Nº 1A, 1º Andar, Sala E, 4490-639 Póvoa de Varzim - Portugal</p>
+      <p>Tel.: <a href="tel:+351919003008">(+351) 91 90 03 008</a> / E-mail: <a href="mailto:cesarpires-10865p@adv.oa.pt">cesarpires-10865p@adv.oa.pt</a></p>
+  </address>
+  <div class="pt-4">
+      <google-map width="100%" [options]="options" [zoom]="zoom">
+        <map-marker
+        [position]="marker.position"
+        [label]="marker.label"
+        [title]="marker.title"
+        [options]="marker.options">
+  </map-marker>
+      </google-map>
+  </div>

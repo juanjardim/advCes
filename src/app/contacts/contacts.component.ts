@@ -1,27 +1,42 @@
-import { Component, OnInit } from '@angular/core'
-declare var GMaps: any;
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { MapMarker, GoogleMap } from '@angular/google-maps'
+
 @Component({
-    templateUrl: './contacts.component.html'
+  selector: 'app-contacts',
+  templateUrl: './contacts.component.html',
+  styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
-    ngOnInit(): void {
-        var element = document.getElementById('varzinLocation');
-        if (!element)
-            return;
+  @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
+  latitude = 41.381856;
+  longitude = -8.76329;
+  options: google.maps.MapOptions;
+  zoom = 50;
+  marker;
 
-        var map = new GMaps({
-            zoom: 16,
-            div: '#varzinLocation',
-            lat: 41.381856,
-            lng: -8.76329
-        });
-        map.addMarker({
-            lat: 41.381856,
-            lng: -8.76329,
-            title: 'César Pires -Advogado',
-            infoWindow: {
-                content: '<p>César Pires - Advogado</p> <p>Rua Frei Sebastião de São Luís Nº 1A, 1º Andar Sala E 4490-639 Póvoa de Varzim - Portugal</p>'
-            }
-        });
+  constructor() { }
+
+  ngOnInit(): void {
+    this.options  = {
+      mapTypeId: 'hybrid',
+      zoomControl: false,
+      scrollwheel: false,
+      disableDoubleClickZoom: true,
+      maxZoom: 16,
+      minZoom: 10,
+      center: {lat: this.latitude, lng: this.longitude}
+    };
+
+    this.marker = {
+      position: {
+        lat: this.latitude,
+        lng: this.longitude,
+      },
+      title: 'Rua Frei Sebastião de São Luís, Nº 1A, 1º Andar, Sala E, 4490-639 Póvoa de Varzim - Portugal',
+      options: {
+        animation: google.maps.Animation.DROP        ,
+      },
     }
+  }
+
 }

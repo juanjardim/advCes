@@ -1,0 +1,25 @@
+
+@import "./variables";
+
+body {
+  font-family: $primary-font;
+  font-size: $font-size;
+
+  a {
+    color: $link;
+    &:hover{
+      color: $link-hover;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: $title-font;
+  }
+
+  ul {
+    padding-inline-start: 20px;
+  }
+}

@@ -1,5 +1,15 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 @Component({
-    templateUrl:'./curriculum.component.html'
+  selector: 'app-curriculum',
+  templateUrl: './curriculum.component.html',
+  styleUrls: ['./curriculum.component.scss']
 })
-export class CurriculumComponent{}
+export class CurriculumComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
